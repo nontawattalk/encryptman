@@ -120,3 +120,26 @@ Performance comparison with other tools:
 - **Always backup your vault.config file** - without it, your data is unrecoverable
 - Store vault backups in multiple locations
 - Test restore procedures regularly
+
+## 🖥 GUI (Graphical User Interface)
+
+Encryptman includes a minimal graphical user interface built with [egui](https://github.com/emilk/egui) via the `eframe` crate. This GUI lets you create vaults, encrypt and decrypt files, and list contents without using the command line.
+
+### Running the GUI on Windows
+
+To build and run the GUI on Windows:
+
+```bash
+git clone https://github.com/yourusername/encryptman.git
+cd encryptman
+# Build the GUI binary
+cargo build --release --bin encryptman_gui
+# Launch the GUI
+target\release\encryptman_gui.exe
+```
+
+The GUI window has fields for the vault path, source path, destination path, and password. Use the buttons to create a new vault, encrypt files into it, decrypt files from it, or list files inside.
+
+### Packaging for Distribution
+
+You can distribute the GUI by copying `encryptman_gui.exe` (and optionally the CLI `encryptman.exe`) from the `target\release` directory to your users. For a Windows installer, consider using [cargo‑wix](https://github.com/volks73/cargo-wix) or similar tools to generate an `.msi` installer.
